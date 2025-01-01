@@ -3,10 +3,10 @@ require("express-async-errors");
 const express = require("express");
 const app = express();
 const connectDB = require("./db/connect");
-const helmet = reqiure("helmet");
-const cors = reqiure("cors");
+const helmet = require("helmet");
+const cors = require("cors");
 const xss = require("xss-clean");
-const { rateLimit } = require("express-rate-limit");
+const rateLimit = require("express-rate-limit");
 
 // routes
 const authRoute = require("./routes/auth");
