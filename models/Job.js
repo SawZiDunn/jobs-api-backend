@@ -8,7 +8,7 @@ const JobSchema = new mongoose.Schema(
         status: {
             type: String,
             required: [true, "Status is empty!"],
-            enum: ["interview", "pending", ""],
+            enum: ["interview", "pending", "accepted"],
         },
         company: {
             type: String,

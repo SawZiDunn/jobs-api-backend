@@ -1,7 +1,6 @@
 require("dotenv").config();
 require("express-async-errors");
-const express = require("express");
-const app = express();
+
 const connectDB = require("./db/connect");
 const helmet = require("helmet");
 const cors = require("cors");
@@ -10,11 +9,14 @@ const rateLimit = require("express-rate-limit");
 const swaggerUI = require("swagger-ui-express");
 const YAML = require("yamljs");
 
+const express = require("express");
+const app = express();
+
 // routes
 const authRoute = require("./routes/auth");
 const jobsRoute = require("./routes/jobs");
 
-// error handler
+// error handlers
 const notFoundMiddleware = require("./middleware/not-found");
 const errorHandlerMiddleware = require("./middleware/error-handler");
 const authenticationMiddleware = require("./middleware/authentication");
@@ -31,7 +33,7 @@ const limiter = rateLimit({
 });
 
 app.use(express.json());
-// extra packages
+// extra packages for security
 app.use(helmet());
 app.use(cors());
 app.use(limiter);

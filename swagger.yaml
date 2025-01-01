@@ -113,7 +113,7 @@ paths:
                 - in: path
                   name: jobId
                   schema:
-                      type: integer
+                      type: string
                   required: true
                   description: Numeric ID of the user to get
             responses:
@@ -130,7 +130,7 @@ paths:
                 - in: path
                   name: jobId
                   schema:
-                      type: integer
+                      type: string
                   required: true
                   description: Numeric ID of the user to edit
             security:
@@ -168,7 +168,7 @@ paths:
                 - in: path
                   name: jobId
                   schema:
-                      type: integer
+                      type: string
                   required: true
                   description: Numeric ID of the user to delete
             responses:
