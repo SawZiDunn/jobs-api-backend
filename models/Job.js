@@ -19,9 +19,12 @@ const JobSchema = new mongoose.Schema(
         position: {
             type: String,
             required: [true, "Position is empty!"],
+            maxLength: 100,
         },
         createdBy: {
             type: mongoose.Schema.ObjectId,
+            ref: "User", // User Model
+            required: [true, "Please provide a user ID"],
         },
     },
     { timestamps: true }

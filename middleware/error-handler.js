@@ -1,4 +1,3 @@
-const { CustomAPIError } = require("../errors");
 const { StatusCodes } = require("http-status-codes");
 
 const errorHandlerMiddleware = (err, req, res, next) => {
@@ -7,10 +6,6 @@ const errorHandlerMiddleware = (err, req, res, next) => {
         message: err.message || "Internal Server Error!",
         name: err.name,
     };
-
-    // if (err instanceof CustomAPIError) {
-    //     return res.status(err.statusCode).json({ msg: err.message });
-    // }
 
     if (err.code && err.code === 11000) {
         // convert an obj to an array
